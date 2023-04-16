@@ -1,6 +1,10 @@
 #include <iostream>
 #include "game.hpp"
 
+/**
+ * @file main.cpp
+ */
+
 int main(void) {
 
   // instantiate a new Game:
