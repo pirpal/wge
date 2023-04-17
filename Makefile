@@ -1,13 +1,10 @@
 # WGE Makefile
 
-# ----[ COMPILER & FLAGS ]------------------------
-
+# COMPILER & FLAGS
 CC      = g++
 CFLAGS  = -g -Wall -Wextra -std=c++17 -pedantic
 
-
-# ----[ DEFINITIONS ]-----------------------------
-
+#  DEFINITIONS
 # Directories
 BIN_DIR = bin
 OBJ_DIR = obj
@@ -19,15 +16,15 @@ BIN     = $(BIN_DIR)/GAME
 # Source files
 SRC     = $(wildcard $(SRC_DIR)/*.cpp)
 
-# Object files
+# [ Object files ]
 OBJ     = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC))
 
 # Libraries links
 SFML    = -lsfml-graphics -lsfml-window -lsfml-system 
+# MATH = -lm
 
 
-# ----[ RULES ]-----------------------------------
-
+# RULES
 all: $(BIN)
 
 # Executable linkage from object files

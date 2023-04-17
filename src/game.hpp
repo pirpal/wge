@@ -9,7 +9,6 @@
 
 typedef uint8_t   ui8;
 typedef uint16_t ui16;
-typedef uint32_t ui32;
 typedef double    f64;
 
 class Game {
@@ -24,12 +23,13 @@ private:
   void init();
   
 public:
+  Game() = delete;
   Game(const ui16, const ui16);
   ~Game();
   void poll_events();
   void update();
   void render();
-  bool running() const;
+  bool running() const noexcept;
 };
 
 #endif // GAME_HPP_
