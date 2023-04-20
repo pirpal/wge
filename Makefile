@@ -16,12 +16,12 @@ BIN     = $(BIN_DIR)/GAME
 # Source files
 SRC     = $(wildcard $(SRC_DIR)/*.cpp)
 
-# [ Object files ]
+# Object files
 OBJ     = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC))
 
 # Libraries links
 SFML    = -lsfml-graphics -lsfml-window -lsfml-system 
-# MATH = -lm
+MATH    = -lm
 
 
 # RULES
@@ -29,11 +29,11 @@ all: $(BIN)
 
 # Executable linkage from object files
 $(BIN): $(OBJ)
-	$(CC) $(CFLAGS) $^ -o $@ $(SFML)
+	$(CC) $(CFLAGS) $^ -o $@ $(SFML) $(MATH)
 
 # Objects separated compilation
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CC) $(CFLAGS) -c $< -o $@ $(SFML)
+	$(CC) $(CFLAGS) -c $< -o $@ $(SFML) $(MATH)
 
 clean:
 	rm -f $(BIN_DIR)/* $(OBJ_DIR)/*
