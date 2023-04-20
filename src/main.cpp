@@ -8,7 +8,7 @@
 int main(void) {
 
   // instantiate a new Game:
-  Game game(600, 400);
+  Game game(800, 600, 32.f);
 
   // main game loop:
   while (game.running()) {
